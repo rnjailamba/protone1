@@ -32,6 +32,8 @@ gem 'will_paginate-bootstrap'
 
 gem 'simple_form'
 
+gem 'simple_token_authentication', '~> 1.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

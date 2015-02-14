@@ -31,6 +31,10 @@ and user.pins
 added the remaining fields to the competitions
 [Commit 9]
 
+Gems of paginate and simple form done with all views written
+
+Simple token gem now being put
+
 
 
 

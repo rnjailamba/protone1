@@ -1,6 +1,15 @@
 @import 'bootstrap';
 
-body {background-color:lightgray}
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+body {
+	background-color:lightgray;
+	font-family: 'Lato',"Times New Roman", Times, serif;
+	 -webkit-font-smoothing: antialiased;
+  	text-rendering: optimizelegibility;
+}
+
+
 
 .center {
      text-align: center;
