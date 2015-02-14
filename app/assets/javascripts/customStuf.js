@@ -28,7 +28,18 @@ $(document).on('ready page:load', function () {
         $('#competition_startDateText').data("DateTimePicker").maxDate(e.date);
     });
 
-})
+});
+
+
+$(document).on('ready page:load', function () {
+    $("#comp").masonry({
+        // options
+        itemSelector : '.masonry-item',
+        // options...
+      isFitWidth: true
+
+    });
+});
 
 /* The dropdownFor Category*/
 
