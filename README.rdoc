@@ -24,5 +24,11 @@ rails generate scaffold competitions name:string --no-assets
 This file gets created with scaffold, and messes up the rest of your CSS, so just delete it
 app/assets/stylesheets/scaffolds.css.scss]]
 
+rails g migration add_user_id_to_pins user_id:integer:index
+
+at this moment can just has many and belongs to and we can call pin.user
+and user.pins
+
+added the remaining fields to the competitions
 
 
