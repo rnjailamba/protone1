@@ -19,11 +19,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <% flash.each do |name, msg| %>
-     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-  <% end %>
+  <%= render "layouts/header" unless @skip_header %>
+  <div class="flash-message">
+    <% flash.each do |name, msg| %>
+       <%= content_tag(:div, msg, class: "alert alert-success alert-block fade in") %>
+    <% end %>
+  </div>
 
     <%= yield %>
+
+  <%= render "layouts/footer" unless @skip_footer %>
 
 </body>
 </html>

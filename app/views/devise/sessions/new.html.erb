@@ -1,26 +1,26 @@
-<h2>Log in</h2>
+<div class="SignUp">
+   <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name) , :html => {:autocomplete => "on"}) do |f| %>
+       <%= f.error_notification %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+       <h1>Sign In</h1>
+       <h4 class="center"> Don't have an account? <a href="/users/sign_up" ><font color="#4aa3df">Sign Up</font></a></h4>
+       
+       <hr>
+       
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+        <%= f.input :email %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+        <%= f.input :password  %>
 
-<%= render "devise/shared/links" %>
+        
+      
+        <button type="submit">Sign In</button>
+        <h4 class="center"> <a href="/users/password/new" ><font color="#4aa3df">Forgot Password<font></a></h4>
+       
+      
+     
+  <% end %>
+</div>
+
+

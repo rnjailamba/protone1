@@ -17,7 +17,6 @@ heroku
 
 devise
 
-
 rails generate scaffold competitions name:string --no-assets
 
 [[Delete the default scaffold CSS
@@ -30,5 +29,8 @@ at this moment can just has many and belongs to and we can call pin.user
 and user.pins
 
 added the remaining fields to the competitions
+[Commit 9]
+
+
 
 
