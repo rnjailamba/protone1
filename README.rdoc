@@ -8,3 +8,9 @@ add bootstrap sass
 
 The css order among files is clear
 
+bundle installl with out production
+
+heroku
+-sign in
+-key add
+-create
