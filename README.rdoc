@@ -14,3 +14,15 @@ heroku
 -sign in
 -key add
 -create
+
+devise
+
+
+rails generate scaffold competitions name:string --no-assets
+
+[[Delete the default scaffold CSS
+This file gets created with scaffold, and messes up the rest of your CSS, so just delete it
+app/assets/stylesheets/scaffolds.css.scss]]
+
+
+
