@@ -41,6 +41,9 @@ If you're using bootstrap-sprockets in Javascript you don't need to include boot
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>:removing this fixed the general uncaught reference in the custom.js
 
+javascript doesnt work with turbolinks:::::
+http://stackoverflow.com/questions/18770517/rails-4-how-to-use-document-ready-with-turbo-links
+
 
 
 

@@ -1,8 +1,5 @@
-
-
 /*Date time Picker*/
-
-$(document).ready(function(){
+$(document).on('ready page:load', function () {
     $('#competition_startDateText').datetimepicker({
       sideBySide: true,
       format: "MMMM Do YYYY, h a",
@@ -73,7 +70,7 @@ $(function(){
 });
 
 /*Google Maps*/
-$(document).ready(function() {
+$(document).on('ready page:load', function () {
     var autocomplete = new google.maps.places.Autocomplete($("#competition_location")[0], {});
 
     google.maps.event.addListener(autocomplete, 'place_changed', function() {
