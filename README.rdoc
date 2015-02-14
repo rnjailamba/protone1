@@ -45,5 +45,10 @@ javascript doesnt work with turbolinks:::::
 http://stackoverflow.com/questions/18770517/rails-4-how-to-use-document-ready-with-turbo-links
 
 
+rake db:drop all
+rake db:create all
+rake db:migrate
+
+
 
 

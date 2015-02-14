@@ -42,6 +42,10 @@ gem 'jquery-turbolinks'
 
 gem 'masonry-rails'
 
+gem 'activeadmin', github: 'gregbell/active_admin'
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
