@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass',       '3.2.0.0'
 
 gem 'devise'
 
@@ -33,6 +33,9 @@ gem 'will_paginate-bootstrap'
 gem 'simple_form'
 
 gem 'simple_token_authentication', '~> 1.0'
+
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '4.0.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
