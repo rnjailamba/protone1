@@ -1,10 +1,12 @@
 class CompetitionsController < ApplicationController
   before_action :set_competition, only: [:show, :edit, :update, :destroy]
 
+  respond_to :html, :json 
   # GET /competitions
   # GET /competitions.json
-  def index
-    @competitions = Competition.all
+    def index
+    @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+    respond_with(@competitions)
   end
 
   # GET /competitions/1
