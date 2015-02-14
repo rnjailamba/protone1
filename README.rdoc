@@ -37,6 +37,10 @@ Simple token gem now being put
 
 gem 'bootstrap-sass',       '3.2.0.0' fixed the sprockets problem.
 
+If you're using bootstrap-sprockets in Javascript you don't need to include bootstrap as well. I imagine this is what is breaking things.
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>:removing this fixed the general uncaught reference in the custom.js
+
 
 
 

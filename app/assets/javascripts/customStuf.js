@@ -32,3 +32,76 @@ $(document).ready(function(){
     });
 
 })
+
+/* The dropdownFor Category*/
+
+   $( document).on( 'click', '.categ li', function( event ) {
+
+      var $target = $( event.currentTarget );
+      console.log($target.text());
+
+       $('#competition_category').val($target.text().toString());
+
+      $target.closest( '.btn-group' )
+         .find( '[data-bind="label"]' ).text( $target.text() )
+            .end()
+         .children( '.dropdown-toggle' ).dropdown( 'toggle' );
+
+      return false;
+
+   });
+
+    $( document).on( 'click', '.onOff li', function( event ) {
+
+      var $target2 = $( event.currentTarget );
+      console.log($target2.text());
+
+       $('#competition_onOff').val($target2.text().toString());
+
+      $target2.closest( '.btn-group' )
+         .find( '[data-bind="label"]' ).text( $target2.text() )
+            .end()
+         .children( '.dropdown-toggle' ).dropdown( 'toggle' );
+
+      return false;
+
+   });
+
+/*Focus at the beggining of the form*/
+$(function(){
+  $(".Fname").focus();
+});
+
+/*Google Maps*/
+$(document).ready(function() {
+    var autocomplete = new google.maps.places.Autocomplete($("#competition_location")[0], {});
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        var place = autocomplete.getPlace();
+        console.log(place.address_components);
+    });
+});
+
+
+/*Access code*/
+$( document).on( 'click', '.letMeIn', function( event ) {
+
+
+  
+  
+  var entry = $('#accessCode').val();
+  console.log(entry);
+  if (entry == "e") {
+    window.location="/competitions";
+    return false;
+
+  }
+  else
+  {
+    alert("Retry the code you were sent");
+      return true;
+  }
+
+  
+
+});
