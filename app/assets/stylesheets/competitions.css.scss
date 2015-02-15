@@ -8,9 +8,55 @@
 
 
 .masonry-item {
-  margin: 18px;
-  width: 320px;
-  height:314px;
   
+  width: 320px;
+  height:390px;
+  
+  background-color: white;
   border: 2px solid #ccc;
 }
+
+.caption {
+    
+    overflow: hidden;
+    p{
+    	margin-bottom: 10px;
+    }
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+.thumbnail{
+	 margin: 13px;
+	 .footerIcon1{
+	 	margin-right:10px;
+	 	margin-left: 10px;
+	 }
+	 .footerIcon2{
+	 	margin-right:5px;
+	 	margin-left: 68px;
+	 }
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+

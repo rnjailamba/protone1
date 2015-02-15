@@ -18,7 +18,7 @@
   <%= render "layouts/header" unless @skip_header %>
   <div class="flash-message">
     <% flash.each do |name, msg| %>
-       <%= content_tag(:div, msg, class: "alert alert-success alert-block fade in") %>
+       <%= content_tag(:div, msg, class: "alert alert-success alert-block fade in alert-dismissible") %>
     <% end %>
   </div>
 
