@@ -58,6 +58,12 @@ m.attending_competition_id=1
 m.participant
 m.attending_competition
 
+u=User.first
+u.competitions ---ok
+u.attending_competitions ----not ok
+-------now ok
+u.meetings ---ok
 
+c.participants ---not ok
 
 
