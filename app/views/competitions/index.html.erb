@@ -2,7 +2,7 @@
   <div id="comp" class="transitions-enabled">
       <% @competitions.each do |competition| %>
         <div class="masonry-item ">
-          <div class="panel-body">
+          
             <%= competition.name %>
             <%= competition.user.email if competition.user%><br/>
             <%= competition.description %><br/>
@@ -17,7 +17,7 @@
                 <%= link_to 'Destroy', competition, method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
             <% end %>
-          </div>
+         
         </div>
 
 
