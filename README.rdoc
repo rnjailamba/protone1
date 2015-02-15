@@ -50,5 +50,14 @@ rake db:create all
 rake db:migrate
 
 
+The meeting.rb:::::
+m=Meeting.create
+m.participant_id=1
+m.attending_competition_id=1
+
+m.participant
+m.attending_competition
+
+
 
 

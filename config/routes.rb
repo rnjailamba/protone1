@@ -3,10 +3,22 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :competitions
+
+  resources :competitions do
+    member do
+      get :participants
+    end
+  end
+
+
+
+
 
   devise_for :users
+  match '/users/:id/attending_competitions', :to => 'users#attending_competitions', :via => [:get,:post] 
+
   root 'pages#home'
+
 
 
 
