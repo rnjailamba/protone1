@@ -14,33 +14,34 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails',			'4.0.3'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks',			'2.5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', 			'~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass',       '3.2.0.0'
 
-gem 'devise'
+gem 'devise',				'3.4.1'
 
 gem 'will_paginate', '~> 3.0.5'
 
-gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap',		'1.0.1'
 
-gem 'simple_form'
+gem 'simple_form',			'3.1.0'
 
 gem 'simple_token_authentication', '~> 1.0'
+#was working on 1.7.0
 
 gem 'momentjs-rails', '>= 2.8.1'
 
 gem 'bootstrap3-datetimepicker-rails', '4.0.0'
 
-gem 'jquery-turbolinks'
+gem 'jquery-turbolinks',	'2.1.0'
 
-gem 'masonry-rails'
+gem 'masonry-rails', 		'0.2.4'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 
