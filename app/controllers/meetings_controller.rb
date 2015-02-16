@@ -1,12 +1,14 @@
 class MeetingsController < ApplicationController
 	before_action :authenticate_user!
 
+
 	def create
 		Rails.logger.info "message"
+		Rails.logger.info params[:attending_competition_id]
 		@comp  = Competition.find(params[:attending_competition_id])
 		Rails.logger.info @comp
 		Rails.logger.info "blah"
-		@meeting = current_user.meetings.build(:attending_competition_id => 9)
+		@meeting = current_user.meetings.build(:attending_competition_id => @comp.id)
 		
 	  if @meeting.save
 	    flash[:notice] = "Added friend."
