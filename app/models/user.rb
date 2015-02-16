@@ -8,5 +8,7 @@ class User < ActiveRecord::Base
 	has_many :meetings , class_name:  "Meeting" ,foreign_key: "participant_id"
 	has_many :attending_competitions, through: :meetings,:source => :attending_competition
 
+  accepts_nested_attributes_for :meetings
+
 
 end

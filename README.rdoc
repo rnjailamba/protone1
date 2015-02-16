@@ -49,6 +49,7 @@ rake db:drop all
 rake db:create all
 rake db:migrate
 
+rails g model Meeting
 
 The meeting.rb:
 m=Meeting.create
@@ -68,5 +69,7 @@ c.participants ---not ok
 -----now ok
 
 c.meetings----ok
+
+rails generate controller Meetings
 
 

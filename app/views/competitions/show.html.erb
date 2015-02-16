@@ -1,3 +1,5 @@
+
+
 <div class="container">
 	<div class="row" id="moreInfo">
 		<div class="col-sm-6">
@@ -71,6 +73,8 @@
 	<% if @competition.user == current_user %>
 				<button class="btn btn-warning" ><%= link_to 'Edit', edit_competition_path(@competition)%></button>		  
 	<% end %>
+
+	<%= render 'register_form' %>
 </div>
 
 
