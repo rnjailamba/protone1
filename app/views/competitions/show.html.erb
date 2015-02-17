@@ -71,10 +71,13 @@
 
 	<button class="btn btn-warning" ><%= link_to 'Back', competitions_path %></button>
 	<% if @competition.user == current_user %>
-				<button class="btn btn-warning" ><%= link_to 'Edit', edit_competition_path(@competition)%></button>		  
-	<% end %>
+				<button class="btn btn-warning" ><%= link_to 'Edit', edit_competition_path(@competition)%></button>	
 
-	<%= render 'register_form' %>
+				<button class="btn btn-warning" ><%= link_to 'Participants', participants_competition_path%></button>		  
+	<% end %>
+	<% if user_signed_in? %>
+		<%= render 'register_form' %>
+	<%end%>
 </div>
 
 
