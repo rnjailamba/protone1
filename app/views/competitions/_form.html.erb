@@ -22,10 +22,10 @@
               <% end %>
 
 
-              <h5>EVENT NAME</h5>
+              <h5>EVENT NAME *</h5>
               <%= f.text_field :name, autofocus: true, class: "form-control" , :placeholder => "eg. Quizzical", :autocomplete => :off%>
 
-              <h5>EVENT CATEGORY</h5>
+              <h5>EVENT CATEGORY *</h5>
 
               
                 <div class="backg">
@@ -60,7 +60,7 @@
                   </div>
                  <input type="hidden" class="form-control" name="competition[category]" id="competition_category"/>      
 
-              <h5>BRIEF DESCRIPTION</h5>
+              <h5>BRIEF DESCRIPTION *</h5>
               <%= f.text_field :description, class: "form-control" , :placeholder => "A Bussiness and Economy Quiz", :autocomplete => :off%>
 
             
@@ -105,7 +105,7 @@
               <%= f.text_field :linkFb, class: "form-control", :placeholder => "Enter the link of the events FB page" %>
 
               
-               <h5>STARTS AT</h5>
+               <h5>STARTS AT *</h5>
                
               <div class="y">
                   <div class="x">
