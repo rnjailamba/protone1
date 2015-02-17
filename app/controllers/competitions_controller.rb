@@ -5,8 +5,14 @@ class CompetitionsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 respond_to :html, :json 
 
+
   def index
-    @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+    if params[:query].present?
+      @competitions = Competition.search(params[:query],fields: [:name, :collegename],page: params[:page])
+    else
+      @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+      
+    end
     respond_with(@competitions)
   end
 

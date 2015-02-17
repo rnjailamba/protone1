@@ -78,4 +78,24 @@ User controller needs show action etc..
 
 Devise with has many
 
+....
+
+....
+
+
+
+Search::
+
+ brew install elasticsearch
+
+   gem 'searchkick'
+
+   searchkick(in the searchable model)
+
+   elasticsearch (on terminal)
+
+   rake searchkick:reindex:all
+
+
+
 

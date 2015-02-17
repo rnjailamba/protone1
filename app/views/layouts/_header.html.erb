@@ -10,12 +10,23 @@
       </button>
       <%= link_to "CMPETE!", competitions_path ,{class: "navbar-brand"}%>
     </div>
-    <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search competitions">
+    
+
+
+    <%= form_tag competitions_path, class: "form-inline", :method => :get do %>
+    <div class="input-group input-group-lg">
+    <% if params[:query].present? %>
+        <div class="input-group-btn">
+        <%= link_to "clear", competitions_path, class: "btn btn-default" %>
         </div>
-       
-    </form>
+    <% else %>
+        <%= text_field_tag :query, params[:query], id: "competition_search", class: "form-control", autocomplete: "off" %>
+        <div class="input-group-btn">
+        <%= submit_tag "Search", class: "btn btn-default" %>
+        </div>
+        <% end %>
+        </div>
+    <% end %>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

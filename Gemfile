@@ -45,6 +45,8 @@ gem 'masonry-rails', 		'0.2.4'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+gem 'searchkick'
+
 
 
 # Use ActiveModel has_secure_password
