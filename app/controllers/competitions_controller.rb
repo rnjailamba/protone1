@@ -49,6 +49,13 @@ respond_to :html, :json
     render 'show_follow'
   end
 
+  def participants
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.attending_competition.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
   def follow(other_comp)
     meetings.create(attending_competition: other_comp.id)
   end
