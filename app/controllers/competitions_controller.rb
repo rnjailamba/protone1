@@ -19,11 +19,11 @@ respond_to :html, :json
       @competition = current_user.competitions.build
       respond_with(@competition)
     
-
-
   end
 
   def edit
+    @competition = Competition.find(params[:id])
+
   end
 
   def create

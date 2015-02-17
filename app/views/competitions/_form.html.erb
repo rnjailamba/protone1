@@ -71,7 +71,7 @@
               <%= f.text_field :organizedBy, class: "form-control",  :placeholder => "The Quiz Club at Adobe  |  [Fest name/Club name/Fete name]" ,:autocomplete => :off%>
 
               <h5>LOCATION</h5>
-              <input class="form-control" type="text" name="competition[location]" id="competition_location">
+              <%= f.text_field :location, class: "form-control" %>
 
               <h5>ONLINE/ONSITE EVENT</h5>
               <div class="backg">
@@ -109,7 +109,7 @@
                
               <div class="y">
                   <div class="x">
-                      <input type='text' class="form-control" name="competition[startDateText]" id="competition_startDateText"/>
+                      <%= f.text_field :startDateText, class: "form-control" %>
                   </div>
               </div>
 
@@ -117,7 +117,7 @@
               <h5>ENDS AT</h5>
               <div class="y">
                   <div class="x">
-                      <input type='text' class="form-control" name="competition[endDateText]" id="competition_endDateText"/>
+                      <%= f.text_field :endDateText, class: "form-control" %>
                   </div>
               </div>
               
