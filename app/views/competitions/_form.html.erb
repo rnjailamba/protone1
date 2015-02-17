@@ -26,39 +26,10 @@
               <%= f.text_field :name, autofocus: true, class: "form-control" , :placeholder => "eg. Quizzical", :autocomplete => :off%>
 
               <h5>EVENT CATEGORY *</h5>
-
-              
-                <div class="backg">
-                  <div class="btn-group btn-input clearfix">
-                     <button type="button" class="btn btn-default dropdown-toggle form-control"  data-toggle="dropdown">
-                        <div class="selectText">
-                          <span data-bind="label" >Select One</span>&nbsp;<span class="caret"></span>
-                        </div>
-                     </button>
-                     <ul class="dropdown-menu categ" role="menu">
-                       
-                                <li><a >Bussiness Plan</a></li>
-                                <li><a >Dance</a></li>
-                                <li><a >Design</a></li>
-                                <li><a >Debate</a></li>
-                                <li><a >Electronics Design </a></li>
-                                <li><a >Law</a></li>
-                                <li><a >Management</a></li>
-                                <li><a >MUN</a></li>
-                                <li><a >Music</a></li>                                
-                                <li><a >Programming</a></li>
-                                <li><a >Quiz</a></li>
-                                <li><a >Robotics</a></li>
-                                <li><a >Sports</a></li>
-                                <li><a >Strategy</a></li>
-                                <li><a >Presentation</a></li>
-                                <li role="presentation" class="divider"></li>
-                                <li><a >Miscellaneous</a></li>
-                     </ul>
-
-                   </div>
-                  </div>
-                 <input type="hidden" class="form-control" name="competition[category]" id="competition_category"/>      
+              <div class="backg">
+                  <%= f.select :category, 
+                  options_for_select([ ['Bussiness Plan','Bussiness Plan'],['Dance','Dance'],['Design','Design'],['Debate','Debate'],['Electronics','Electronics'],['Law','Law'],['Management','Management'],['MUN','MUN'],['Presentation','Presentation'],['Programming','Programming'],['Robotics','Robotics'],['Sports','Sports'],['Strategy','Strategy'],['Miscellaneous','Miscellaneous']   ], :selected => @competition.category),{}, { :class => 'span3 controls controls-row select-style' } %>
+              </div>
 
               <h5>BRIEF DESCRIPTION *</h5>
               <%= f.text_field :description, class: "form-control" , :placeholder => "A Bussiness and Economy Quiz", :autocomplete => :off%>
@@ -75,22 +46,10 @@
 
               <h5>ONLINE/ONSITE EVENT</h5>
               <div class="backg">
-                  <div class="btn-group btn-input clearfix">
-                       <button type="button" class="btn btn-default dropdown-toggle form-control"  data-toggle="dropdown">
-                          <div class="selectText">
-                            <span data-bind="label" >Select</span>&nbsp;<span class="caret"></span>
-                          </div>
-                       </button>
-                       <ul class="dropdown-menu onOff" role="menu">
-                                  
-                                  <li><a >Online</a></li>
-                                  <li><a >Onsite</a></li>
-                                  
-                       </ul>
-
-                  </div>
-              </div>
-              <input type="hidden" class="form-control" name="competition[onOff]" id="competition_onOff"/>  
+                 <%= f.select :onOff, 
+                options_for_select([['Online','Online'],['Onsite','Onsite']  ], :selected => @competition.category),{}, { :class => 'span3 controls controls-row select-style' } %>
+               </div>
+   
 
               <h5>TOTAL PRIZE MONEY[Rupees]</h5>
               <div class="prizeMoney">
