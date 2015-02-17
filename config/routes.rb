@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 devise_for :users, controllers: { sessions: "users/sessions",registrations: "users/registrations",confirmations: "users/confirmations",passwords: "users/passwords",unlocks: "users/unlocks" }
 resources :users, :only => [:show] 
 
-  match '/users/:id/attending_competitions', :to => 'users#attending_competitions', :via => [:get,:post] 
+  match '/users/:id/attending_competitions', :to => 'users#attending_competitions', :via => [:get,:post] , as: 'attending_competitions'
+  match '/users/:id/created_competitions', :to => 'users#created_competitions', :via => [:get,:post] , as: 'created_competitions'
 
   root 'pages#home'
 

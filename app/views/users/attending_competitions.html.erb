@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Protone1</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  
+
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+  <%= render "layouts/header" unless @skip_header %>
+  
+
+	<p class="row center">			<h1>ATTENDING STUFF</h1></p>
+	<div class="container">
+	  <div id="comp" class="transitions-enabled">
+
+			<% @comp.each do |competition| %>
+			        
+			  <div class="thumbnail masonry-item ">
+			      <img src="http://placehold.it/320x130" alt="">
+			      <div class="caption">
+
+			          <!-- <h4 class="pull-right">$64.99</h4> -->
+			          <h4><a href="#"><%= competition.name %></a>
+			          </h4>
+			          <%= competition.description %><br/>
+			         
+			          
+			          <h5 class="pull-right"><span class="glyphicon glyphicon-calendar"></span>  <%= competition.startDateText %></h5>
+			          <h5 class="pull-left"><span class="glyphicon glyphicon-tag"></span>  <%= competition.category %></h5>                   
+			  
+			      </div>
+
+
+			      <div class="ratings">
+			          <h5 style="color:black"><span class="glyphicon glyphicon-map-marker"></span> <%= competition.location %> </h5>
+			          <hr style='background-color:#000000;border-width:0;color:#000000;height:1px;line-height:0;text-align:left;width:95%;'/>
+			          <p class="pull-right"><%= link_to 'More Info', competition %></p>
+			              <i class="fa fa-bookmark-o fa-2x footerIcon1"></i>
+			              <!-- <i class="fa fa-heart-o fa-2x footerIcon2"></i> -->
+			          </p>
+
+			            
+			      </div>
+			    </div>
+			 
+
+			<% end %>
+		</div>
+	 </div>
+
+  <%= render "layouts/footer" unless @skip_footer %>
+
+</body>
+</html>
