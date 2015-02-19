@@ -110,6 +110,12 @@ $(document).ready(function () { /* ... */ });
 $(function () { /* ... */ });
 
 
+Facets done from:
+http://stackoverflow.com/questions/23354154/setting-up-facets-in-elasticsearch-with-searchkick-gem-in-rails-4-1
+https://github.com/mattBlackDesign/craftablock/blob/90eb9fd4467ec465b457faf03617fa4dd8c05540/app/models/block.rb
+
+
+
 
 
 

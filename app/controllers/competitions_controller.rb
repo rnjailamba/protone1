@@ -14,7 +14,7 @@ class CompetitionsController < ApplicationController
     #@block_facets = Block.facets_default(params)
 
     if params[:query].present?
-      @competitions = Competition.search(params[:query],fields: [:name, :collegename,:location], facets: [:category] ,page: params[:page])
+      @competitions = Competition.search(params[:query],fields: [:name, :collegename,:location,:category], facets: [:category] ,page: params[:page])
          
     else
       @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
