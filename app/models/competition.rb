@@ -1,7 +1,31 @@
 class Competition < ActiveRecord::Base
 
 	searchkick autocomplete: ['name', 'collegename','location']
-	
+
+=begin
+	def self.facets_search(params)
+	  query = params[:query].presence || "*"
+	  conditions = {}
+	  conditions[:year] = params[:year] if params[:year].present?
+
+	  movies = Movie.search query, where: conditions, 
+	    facets: [:year], 
+	    smart_facets: true, page: params[:page], suggest: true, highlight: true,
+	    per_page: 10
+	  movies
+	end
+=end
+
+
+	def self.facets_search(params)
+		query = params[:query].presence || "*"
+		conditions = {}
+		conditions[:category] = params[:category] if params[:category].present?
+
+		competitions = Competition.search(query, order: {name: :asc},where: conditions, facets: [:category],smart_facets: true, page: params[:page], per_page: 40)
+		competitions
+	end
+
 
 	validates :name,  presence: true, length: { maximum: 50 }
 	validates :description,  presence: true, length: { maximum: 50 }

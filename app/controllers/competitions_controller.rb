@@ -10,10 +10,15 @@ class CompetitionsController < ApplicationController
   end
 
   def index
+    @compFacet = Competition.facets_search(params)
+    #@block_facets = Block.facets_default(params)
+
     if params[:query].present?
-      @competitions = Competition.search(params[:query],fields: [:name, :collegename,:location],page: params[:page])
+      @competitions = Competition.search(params[:query],fields: [:name, :collegename,:location], facets: [:category] ,page: params[:page])
+         
     else
       @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+      #Nothing there @users = User.search "*",limit: 200
       
     end
     respond_with(@competitions)

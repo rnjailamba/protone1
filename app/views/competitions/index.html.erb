@@ -1,3 +1,11 @@
+<% if @compFacet.facets["category"].present? %>
+    <% @compFacet.facets["category"]["terms"].each do |filter| %>
+      <% unless filter['term'].blank? || filter['term'] == '0' || filter['term'] == 0 %>
+        <li><%= link_to "#{filter["term"]} (#{filter["count"]})", "/" %></li>
+      <% end %>
+    <% end %>
+  <% end %>
+
 <div class="container">
   <div id="comp" class="transitions-enabled">
       <% @competitions.each do |competition| %>
@@ -33,6 +41,15 @@
       
       <% end %>
   </div>
+
+
+
+
+
+
+
+
+
     
    <div class="center">
      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
