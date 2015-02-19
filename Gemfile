@@ -47,6 +47,8 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'searchkick'
 
+gem "jquery-ui-rails"
+
 
 
 # Use ActiveModel has_secure_password

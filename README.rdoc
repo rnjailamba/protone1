@@ -96,6 +96,22 @@ Search::
 
    rake searchkick:reindex:all
 
+ Autocomplete problem done by 
+ https://github.com/ankane/searchkick/issues/12
+ <input type="submit" value="Search" />
+
+
+Jquery turbolinks problem with search
+// BAD: this will not work.
+$(document).on('ready', function () { /* ... */ });
+
+// OK: these two are guaranteed to work.
+$(document).ready(function () { /* ... */ });
+$(function () { /* ... */ });
+
+
+
+
 
 
 

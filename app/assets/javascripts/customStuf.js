@@ -113,3 +113,16 @@ $( document).on( 'click', '.letMeIn', function( event ) {
   
 
 });
+
+$( function () {
+   $("#competition_search").typeahead({
+    name: "competition",
+    remote: "/competitions/autocomplete?query=%QUERY"
+  });
+
+
+});
+
+
+
+

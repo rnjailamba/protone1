@@ -260,6 +260,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails (= 4.0.3)
   jquery-turbolinks (= 2.1.0)
+  jquery-ui-rails
   masonry-rails (= 0.2.4)
   momentjs-rails (>= 2.8.1)
   pg

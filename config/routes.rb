@@ -3,12 +3,18 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-
+  
+resources :competitions do
+    collection do
+      get :autocomplete
+    end
+  end
   resources :competitions do
     member do
       get :participants
     end
   end
+
 
 
 

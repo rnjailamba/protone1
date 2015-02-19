@@ -3,12 +3,15 @@ class CompetitionsController < ApplicationController
   before_action :set_competition, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show] 
   before_action :correct_user, only: [:edit, :update, :destroy]
-respond_to :html, :json 
+  respond_to :html, :json 
 
+  def autocomplete
+    render json: Competition.search(params[:query],autocomplete: true, limit: 10).map(&:name)
+  end
 
   def index
     if params[:query].present?
-      @competitions = Competition.search(params[:query],fields: [:name, :collegename],page: params[:page])
+      @competitions = Competition.search(params[:query],fields: [:name, :collegename,:location],page: params[:page])
     else
       @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
       
