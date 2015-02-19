@@ -103,10 +103,11 @@
 }
 .input-group.input-group-lg .twitter-typeahead:last-child .tt-query,
 .input-group.input-group-lg .twitter-typeahead:last-child .tt-hint {
-  border-radius: 0 6px 6px 0 !important;
+  border-radius: 0px !important;
 }
 .input-group.input-group-lg .tt-query,
 .input-group.input-group-lg .tt-hint {
+  width: 400px;
   height: 45px;
   padding: 10px 16px;
   font-size: 18px;

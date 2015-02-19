@@ -8,16 +8,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "CMPETE!", competitions_path ,{class: "navbar-brand"}%>
+      <%= link_to "CMPETE!", competitions_path ,{class: "navbar-brand upMargin headerFont"}%>
     </div>
     
 
 
-    <%= form_tag competitions_path, class: "form-inline", :method => :get do %>
+
+    <%= form_tag competitions_path, class: " navbar-form navbar-left", :method => :get do %>
     <div class="input-group input-group-lg">
-   
-        <%= text_field_tag :query, params[:query], id: "competition_search", class: "form-control", autocomplete: "off" %>
-        <input type="submit" value="Search" />
+        <div class="form-group">
+          <%= text_field_tag :query, params[:query], id: "competition_search", class: "form-control", autocomplete: "off" %>
+        </div>
+        
+        <div class=”input-group-btn”>
+          <input type="submit" value="Search" class="btn btn-default pull-right hidden"/>
+        </div>
       
         </div>
     <% end %>
@@ -38,13 +43,13 @@
       
       <ul class="nav navbar-nav navbar-right">
 
-        <li >
-          <p class="createComp"><a href="/competitions/new" class="btn btn-success btn-small" background-color="#2ecc71"><font color="white">Create Competition</font></a> </p></li>
+        <li class="upMargin">
+          <p class="createComp"><a href="/competitions/new" class="btn btn-success btn-small" background-color="#2ecc71"><font color="white" class="headerFont">Create Competition</font></a> </p></li>
         
 
         <% if user_signed_in? %>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-          <li class="dropdown">
+          <li class="upMargin headerFont"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <li class="dropdown upMargin headerFont">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Me<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <!-- <li><%= link_to "Profile", current_user %></li> -->
@@ -55,8 +60,8 @@
           </ul>
         </li>
         <% else %>
-          <li><a href="/users/sign_up">Sign up</a></li>
-          <li><a href="/users/sign_in">Log in</a></li>
+          <li class="upMargin headerFont"><a href="/users/sign_up">Sign up</a></li>
+          <li class="upMargin headerFont"><a href="/users/sign_in">Log in</a></li>
         <% end %>
          
       </ul>
