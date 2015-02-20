@@ -1,6 +1,77 @@
 // Place all the styles related to the competitions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/**************************************
+STATIC LAYOUT CSS
+**************************************/
+
+.wrapper {
+  /*  SECTIONS  */
+    .section {
+      clear: both;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    /*  COLUMN SETUP  */
+    .col {
+      display: block;
+      float:left;
+      margin: 1% 0 1% 1.6%;
+    }
+    .col:first-child { margin-left: 0; }
+
+
+    /*  GROUPING  */
+    .group:before,
+    .group:after {
+      content:"";
+      display:table;
+    }
+    .group:after {
+      clear:both;
+    }
+    .group {
+        zoom:1; /* For IE 6/7 */
+    }
+
+    /*  GRID OF THREE  */
+    .span_3_of_3 {
+      width: 100%;
+    }
+    .span_2_of_3 {
+      width: 73.1%;
+      margin:5px;
+    }
+    .span_1_of_3 {
+      width: 25.2%;
+      padding-left: 40px;
+      ul{
+        list-style: none;
+        border: 1px solid #000;
+        margin: 2em;
+        width: 15em;
+        padding: 5px;
+        
+      }
+    }
+
+    /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+    @media only screen and (max-width: 480px) {
+      .col { margin: 1% 0 1% 0%;}
+      .span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
+    }
+
+
+}
+
+
+
+
+
 #comp {
   margin: 0 auto;
 
