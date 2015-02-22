@@ -121,7 +121,7 @@ ready = function() {
     var numbers = new Bloodhound({
       datumTokenizer: function(d) {
             console.log(d);
-            return Bloodhound.tokenizers.whitespace('value ');
+            return Bloodhound.tokenizers.whitespace('value');
         },
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         remote: {

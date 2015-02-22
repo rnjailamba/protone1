@@ -6,7 +6,7 @@ class CompetitionsController < ApplicationController
   respond_to :html, :json 
 
   def autocomplete
-    render json: Competition.search(params[:query], limit: 10).map {|competition| {name: competition.name, value: competition.id}}
+    render json: Competition.search(params[:query], fields: [{name: :text_start}], limit: 10).map {|competition| {name: competition.name, value: competition.id}}
   end
 
   def index
