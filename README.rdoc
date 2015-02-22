@@ -124,6 +124,9 @@ Changing this : url: "/competitions/autocomplete?query=%QUERY"
 gives a 404 so it is working sort of
 
 
+http://localhost:3000/competitions/autocomplete?query=%22the%22 is ok now!!
+
+
 
 
 

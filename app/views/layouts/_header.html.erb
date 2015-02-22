@@ -12,20 +12,15 @@
     </div>
     
 
+  <%= form_tag competitions_path, method: :get do %>
+    <div class="form-group">
+      <%= text_field_tag :query, params[:query], class: 'form-control typeahead', autocomplete: "off" %>
+      <%= submit_tag 'Search', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
 
 
-    <%= form_tag competitions_path, class: " navbar-form navbar-left", :method => :get do %>
-    <div class="input-group input-group-lg">
-        <div class="form-group">
-          <%= text_field_tag :query, params[:query], id: "competition_search", class: "form-control typeahead", autocomplete: "off" %>
-        </div>
-        
-        <div class=”input-group-btn”>
-          <input type="submit" value="Search" class="btn btn-default pull-right"/>
-        </div>
-      
-        </div>
-    <% end %>
+    
 
 
 

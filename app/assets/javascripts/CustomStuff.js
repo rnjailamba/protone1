@@ -115,9 +115,39 @@ $( document).on( 'click', '.letMeIn', function( event ) {
   
 
 });
+var ready;
+ready = function() {
+    console.log("dfdf")
+    var numbers = new Bloodhound({
+      datumTokenizer: function(d) {
+            console.log(d);
+            return Bloodhound.tokenizers.whitespace('value ');
+        },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url:"/competitions/autocomplete?query=%QUERY"
+        }
+    
+  
+        });
+         
+        // initialize the bloodhound suggestion engine
 
+        var promise = numbers.initialize();
 
+        promise
+        .done(function() { console.log('success!'); })
+        .fail(function() { console.log('err!'); });
+         
+        // instantiate the typeahead UI
+        $('.typeahead').typeahead(null, {
+          displayKey: 'name',
+          source: numbers.ttAdapter()
+        });
+}
 
+$(document).ready(ready);
+$(document).on('page:load', ready);
 
 
 
