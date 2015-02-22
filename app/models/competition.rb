@@ -1,6 +1,6 @@
 class Competition < ActiveRecord::Base
 
-	searchkick text_start: [:name],autocomplete: ['name']
+	searchkick text_start: [:name,:collegename],autocomplete: ['name','collegename']
 =begin
 	def self.facets_search(params)
 	  query = params[:query].presence || "*"
