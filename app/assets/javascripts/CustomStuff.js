@@ -141,7 +141,7 @@ ready = function() {
          
         // instantiate the typeahead UI
         $('.typeahead').typeahead(null, {
-          displayKey: 'name',
+          displayKey: 'store',
           source: numbers.ttAdapter()
         });
 }

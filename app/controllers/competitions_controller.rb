@@ -7,8 +7,8 @@ class CompetitionsController < ApplicationController
 
   def autocomplete
     #render json: Competition.search(params[:query], fields: [{name: :text_start}], limit: 10).map {|competition| {name: competition.name, value: competition.id}}
-    titles = Competition.search(params[:query], fields: [{name: :text_start}], limit: 10).map {|competition| {name: competition.name, value: competition.id}}
-    authors = Competition.search(params[:query], fields: [{collegename: :text_start}], limit: 10).map {|competition| {name: competition.collegename, value: competition.id}}
+    titles = Competition.search(params[:query], fields: [{name: :text_start}], limit: 10).map {|competition| {store: competition.name, value: competition.id}}
+    authors = Competition.search(params[:query], fields: [{collegename: :text_start}], limit: 10).map {|competition| {store: competition.collegename, value: competition.id}}
     render json: (titles + authors)
 
   end
@@ -18,7 +18,7 @@ class CompetitionsController < ApplicationController
     #@block_facets = Block.facets_default(params)
 
     if params[:query].present?
-      @competitions = Competition.search(params[:query],fields: [:name], facets: [:category] ,page: params[:page])
+      @competitions = Competition.search(params[:query],fields: [:name,:collegename], facets: [:category] ,page: params[:page])
          
     else
       @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
