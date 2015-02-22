@@ -1,55 +1,13 @@
-<script type="text/javascript">
 
-      function getLocation(){
-          {
-              if (navigator.geolocation)
-              {
-                  navigator.geolocation.getCurrentPosition(showPosition);
-              }
-              else{x.innerHTML="Geolocation is not supported by this browser.";}
-          }
-
-      }
-
-      function showPosition(position) {
-          var latitude  = position.coords.latitude;
-          var longitude = position.coords.longitude;
-          alert('latitude:' + latitude + 'longitude:' + longitude )
-
-       //   This function is supposed to return the current latitude and longitude of user
-       //   example: 48.1673341, 17.0830998
-      }
-
-
-      function initialize() {
-
-          var mapOptions = {
-
-
-         //    How to pass the result from function showPosition to LatLng ?
-         //    see the line below:                
-         center: new google.maps.LatLng(48.1673341,17.0830998),
-              zoom: 13,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
-          var map = new google.maps.Map(document.getElementById("map-canvas"),
-                  mapOptions);
-
-      }
-
-      google.maps.event.addDomListener(window, 'load', initialize);
-
-  $(document).ready(function(){     //  events before the windows loads
-    getLocation();
-  });
-
-
-  </script>
 
 <div class="wrapper">
   <div class="section group">
     <div class="col span_1_of_3">
-    <ul class="">
+    <ul >
+        <input id="address" class="typeahead" type="text" placeholder="Enter an address">
+         <div class=”input-group-btn”>
+          <input type="submit" value="Search" class="btn btn-default pull-right hidden"/>
+        </div>
          <% if @compFacet.facets["category"].present? %>
               <% @compFacet.facets["category"]["terms"].each do |filter| %>
                 <% unless filter['term'].blank? || filter['term'] == '0' || filter['term'] == 0 %>

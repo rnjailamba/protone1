@@ -116,6 +116,13 @@ https://github.com/mattBlackDesign/craftablock/blob/90eb9fd4467ec465b457faf03617
 
 New grid system at http://www.responsivegridsystem.com/
 
+Back on Searchkick +bloodhound +autocomplete--
+Competition.search("the", autocomplete: true).map(&:name) gives ok result in console
+Currently not showing up in /coompeitions/query  .. .
+
+Changing this : url: "/competitions/autocomplete?query=%QUERY"
+gives a 404 so it is working sort of
+
 
 
 

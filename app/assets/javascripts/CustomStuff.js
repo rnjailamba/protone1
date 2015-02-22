@@ -81,14 +81,16 @@ $(function(){
 });
 
 /*Google Maps*/
-$(document).on('ready page:load', function () {
-    var autocomplete = new google.maps.places.Autocomplete($("#competition_location")[0], {});
-
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-        var place = autocomplete.getPlace();
-        console.log(place.address_components);
-    });
+$( function () {
+    
 });
+
+/*Index page address taken*/
+$( function () {
+  
+
+});
+
 
 
 /*Access code*/
@@ -114,14 +116,7 @@ $( document).on( 'click', '.letMeIn', function( event ) {
 
 });
 
-$( function () {
-   $("#competition_search").typeahead({
-    name: "competition",
-    remote: "/competitions/autocomplete?query=%QUERY"
-  });
 
-
-});
 
 
 
