@@ -140,7 +140,7 @@ ready = function() {
         .fail(function() { console.log('err!'); });
          
         // instantiate the typeahead UI
-        $('.typeahead1').typeahead(null, {
+        $('#competition_search').typeahead(null, {
           displayKey: 'store',
           source: numbers.ttAdapter()
         });
