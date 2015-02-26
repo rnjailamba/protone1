@@ -12,12 +12,12 @@
     </div>
     
 
-  <%= form_tag competitions_path, method: :get do %>
-    <div class="form-group">
-      <%= text_field_tag :query, params[:query], class: 'form-control typeahead', autocomplete: "off" %>
-      <%= submit_tag 'Search', class: 'btn btn-primary' %>
-    </div>
-  <% end %>
+    <%= form_tag competitions_path, method: :get do %>
+      <div class="form-group">
+        <%= text_field_tag :query, params[:query], class: 'form-control typeahead1', autocomplete: "off" %>
+        <%= submit_tag 'Search', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
 
 
     

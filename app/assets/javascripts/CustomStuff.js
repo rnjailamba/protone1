@@ -140,10 +140,24 @@ ready = function() {
         .fail(function() { console.log('err!'); });
          
         // instantiate the typeahead UI
-        $('.typeahead').typeahead(null, {
+        $('.typeahead1').typeahead(null, {
           displayKey: 'store',
           source: numbers.ttAdapter()
         });
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+
+var ready;
+ready = function() {
+    var addressPicker = new AddressPicker();
+
+    $('#address').typeahead(null, {
+      displayKey: 'description',
+      source: addressPicker.ttAdapter()
+    });
 }
 
 $(document).ready(ready);
