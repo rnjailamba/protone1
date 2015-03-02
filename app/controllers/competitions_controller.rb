@@ -25,6 +25,14 @@ class CompetitionsController < ApplicationController
       #Nothing there @users = User.search "*",limit: 200
       
     end
+
+    if params[:search].present?
+      @competitions = Competition.near(params[:search], 50000).paginate(:page => params[:page], :per_page => 15)
+    else
+      @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
+    end
+
+
     respond_with(@competitions)
   end
 
@@ -85,6 +93,7 @@ class CompetitionsController < ApplicationController
 
     def competition_params
       params.require(:competition).permit(:name,:category, :description, :collegename, 
-        :money, :onOff,:location,:startDate,:endDate,:organizedBy,:linkWebsite,:linkWebsite,:linkFb,:startDateText,:endDateText)
+        :money, :onOff,:location,:startDate,:endDate,:organizedBy,:linkWebsite,:linkWebsite,:linkFb,:startDateText,:endDateText,:latitude,
+        :longitude)
     end
 end

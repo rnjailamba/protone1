@@ -125,7 +125,26 @@ gives a 404 so it is working sort of
 
 
 http://localhost:3000/competitions/autocomplete?query=%22the%22 is ok now!!
+had changed the css,check:
+http://stackoverflow.com/questions/28643262/searchkick-autocomplete-with-multiple-attributes
+http://stackoverflow.com/questions/28654125/searchkick-bloodhound-typeahead-for-autocomplete
 
+Geocoder gem
+ rails generate migration AddLatitudeAndLongitudeToCompetitions latitude:float longitude:float
+
+ rake geocode:all CLASS=Competition
+
+ Rails c: Competition.near("Delhi", 10)
+
+
+Changing to MySQL
+gem mysql2
+brew install mysql
+
+mysql.server start
+
+rake db:create 
+rake db:migrate RAILS_ENV=development
 
 
 

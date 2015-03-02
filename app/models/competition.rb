@@ -14,7 +14,8 @@ class Competition < ActiveRecord::Base
 	  movies
 	end
 =end
-
+	geocoded_by :location
+	after_validation :geocode, :if => :location_changed?
 
 	def self.facets_search(params)
 		query = params[:query].presence || "*"
