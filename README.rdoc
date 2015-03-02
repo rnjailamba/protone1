@@ -146,6 +146,10 @@ mysql.server start
 rake db:create 
 rake db:migrate RAILS_ENV=development
 
+remove order: :distance
+
+Adress pickers css problem.
+
 
 
 

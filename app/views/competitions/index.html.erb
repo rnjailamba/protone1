@@ -19,7 +19,7 @@
          <% if @compFacet.facets["category"].present? %>
               <% @compFacet.facets["category"]["terms"].each do |filter| %>
                 <% unless filter['term'].blank? || filter['term'] == '0' || filter['term'] == 0 %>
-                  <li><%= link_to "#{filter["term"]} (#{filter["count"]})", "/competitions?utf8=✓&query=#{filter["term"]}" %></li>
+                  <li><%= link_to "#{filter["term"]} (#{filter["count"]})", "/competitions?query=#{filter["term"]}" %></li>
                 <% end %>
               <% end %>
           <% end %>

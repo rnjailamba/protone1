@@ -9,16 +9,17 @@ class CompetitionsController < ApplicationController
     #render json: Competition.search(params[:query], fields: [{name: :text_start}], limit: 10).map {|competition| {name: competition.name, value: competition.id}}
     titles = Competition.search(params[:query], fields: [{name: :text_start}], limit: 10).map {|competition| {store: competition.name, value: competition.id}}
     authors = Competition.search(params[:query], fields: [{collegename: :text_start}], limit: 10).map {|competition| {store: competition.collegename, value: competition.id}}
-    render json: (titles + authors)
+    #categ = Competition.search(params[:query], fields: [{category: :text_start}], limit: 10).map {|competition| {store: competition.category, value: competition.id}}
+    render json: (titles + authors )
 
   end
 
   def index
-    @compFacet = Competition.facets_search(params)
+    
     #@block_facets = Block.facets_default(params)
 
     if params[:query].present?
-      @competitions = Competition.search(params[:query],fields: [:name,:collegename], facets: [:category] ,page: params[:page])
+      @competitions = Competition.search(params[:query],fields: [:name,:collegename,:category], facets: [:category] ,page: params[:page])
          
     else
       @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
@@ -28,9 +29,9 @@ class CompetitionsController < ApplicationController
 
     if params[:search].present?
       @competitions = Competition.near(params[:search], 50000).paginate(:page => params[:page], :per_page => 15)
-    else
-      @competitions = Competition.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 15)
     end
+
+    @compFacet = Competition.facets_search(params)
 
 
     respond_with(@competitions)
