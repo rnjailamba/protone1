@@ -155,6 +155,9 @@ rake db:migrate RAILS_ENV=development
 remove order: :distance
 
 Adress pickers css problem.
+OK now
+
+heroku run rake searchkick:reindex CLASS=PutYourClassHere
 
 
 
