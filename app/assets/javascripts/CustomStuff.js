@@ -154,7 +154,7 @@ var ready;
 ready = function() {
     var addressPicker = new AddressPicker();
 
-    $('.competition_location').typeahead(null, {
+    $('#competition_location').typeahead(null, {
       displayKey: 'description',
       source: addressPicker.ttAdapter()
     });
@@ -167,7 +167,7 @@ var ready;
 ready = function() {
     var addressPicker = new AddressPicker();
 
-    $('.address').typeahead(null, {
+    $('#address').typeahead(null, {
       displayKey: 'description',
       source: addressPicker.ttAdapter()
     });
