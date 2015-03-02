@@ -14,6 +14,10 @@ heroku
 -sign in
 -key add
 -create
+before heroku
+git push heroku master
+heroku run rake db:migrate
+rake assets:precompile RAILS_ENV=production 
 
 devise
 
