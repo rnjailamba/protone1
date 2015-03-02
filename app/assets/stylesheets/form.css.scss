@@ -263,6 +263,12 @@ input[type="submit"]:hover {
 /*formssComp*/
 .formssComp{
 
+  .twitter-typeahead .tt-query,
+.twitter-typeahead .tt-hint {
+  margin-bottom: 0;
+  margin-left: 3px;
+}
+
 .asterisk_input:after {
   content:" *"; 
   color: #e32;

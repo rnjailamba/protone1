@@ -8,7 +8,7 @@
 
         <%= form_tag competitions_path, :method => :get do %>
           <p>
-            <%= text_field_tag :search, params[:search],class: "address" %>
+            <%= text_field_tag :search, params[:search],class: "address form-control" %>
             <%= submit_tag "Search Near", :name => nil %>
           </p>
         <% end %>
