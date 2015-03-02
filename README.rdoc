@@ -16,8 +16,10 @@ heroku
 -create
 before heroku
 git push heroku master
+rake assets:precompile RAILS_ENV=production
 heroku run rake db:migrate
-rake assets:precompile RAILS_ENV=production 
+heroku run rake searchkick:reindex:all
+ 
 
 devise
 
