@@ -14,11 +14,7 @@ heroku
 -sign in
 -key add
 -create
-before heroku
-git push heroku master
-rake assets:precompile RAILS_ENV=production
-heroku run rake db:migrate
-heroku run rake searchkick:reindex:all
+
  
 
 devise
@@ -158,6 +154,15 @@ Adress pickers css problem.
 OK now
 
 heroku run rake searchkick:reindex CLASS=PutYourClassHere
+before heroku
+git push heroku master
+rake assets:precompile RAILS_ENV=production
+heroku run rake db:migrate
+heroku run rake searchkick:reindex:all
+
+This worked:
+heroku addons:add bonsai
+ heroku config | grep BONSAI
 
 
 
