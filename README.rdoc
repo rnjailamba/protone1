@@ -158,7 +158,7 @@ before heroku
 git push heroku master
 rake assets:precompile RAILS_ENV=production
 heroku run rake db:migrate
-heroku run rake searchkick:reindex:all
+heroku run rake searchkick:reindex:all RAILS_ENV=production
 
 This worked:
 heroku addons:add bonsai

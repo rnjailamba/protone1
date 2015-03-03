@@ -1,5 +1,15 @@
-<% @comp.participants.each do |user| %>
-			        	
-	      <%= user.email %><br/>
-	     	    	  
-<% end %>
+<div class="container participant">
+			
+	<h1 id="title">Participants</h1>
+	<ul id="list">
+	
+		<% @comp.participants.each do |user| %>
+
+
+				<li><%= user.email %><br/> </li>	        	
+		      
+		     	    	  
+	    <% end %>
+	</ul>
+</div>
+			
