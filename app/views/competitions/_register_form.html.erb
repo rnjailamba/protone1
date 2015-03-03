@@ -1,5 +1,6 @@
-
-    <%= render 'unregister' %>
-
-    <%= render 'register' %>
+    <% if current_user.meetings.include?(params[:id]) %>
+	    <%= render 'unregister' %>
+	<% else %>
+	    <%= render 'register' %>
+	<% end %>
   

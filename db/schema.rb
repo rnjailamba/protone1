@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226173729) do
+ActiveRecord::Schema.define(version: 20150303144048) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20150226173729) do
     t.datetime "updated_at"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20150226173729) do
     t.datetime "updated_at"
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "competitions", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -67,9 +67,9 @@ ActiveRecord::Schema.define(version: 20150226173729) do
     t.float    "longitude",     limit: 24
   end
 
-  add_index "competitions", ["category"], name: "index_competitions_on_category", using: :btree
-  add_index "competitions", ["name"], name: "index_competitions_on_name", using: :btree
-  add_index "competitions", ["user_id"], name: "index_competitions_on_user_id", using: :btree
+  add_index "competitions", ["category"], name: "index_competitions_on_category"
+  add_index "competitions", ["name"], name: "index_competitions_on_name"
+  add_index "competitions", ["user_id"], name: "index_competitions_on_user_id"
 
   create_table "meetings", force: :cascade do |t|
     t.integer  "participant_id",           limit: 4
@@ -78,8 +78,9 @@ ActiveRecord::Schema.define(version: 20150226173729) do
     t.datetime "updated_at",                         null: false
   end
 
-  add_index "meetings", ["attending_competition_id"], name: "index_meetings_on_attending_competition_id", using: :btree
-  add_index "meetings", ["participant_id"], name: "index_meetings_on_participant_id", using: :btree
+  add_index "meetings", ["attending_competition_id"], name: "index_meetings_on_attending_competition_id"
+  add_index "meetings", ["participant_id", "attending_competition_id"], name: "index_meetings_on_participant_id_and_attending_competition_id", unique: true
+  add_index "meetings", ["participant_id"], name: "index_meetings_on_participant_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -97,8 +98,8 @@ ActiveRecord::Schema.define(version: 20150226173729) do
     t.string   "authentication_token",   limit: 255
   end
 
-  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", using: :btree
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
