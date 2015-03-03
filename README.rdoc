@@ -164,6 +164,11 @@ This worked:
 heroku addons:add bonsai
  heroku config | grep BONSAI
 
+ rails console:
+ u.meetings.find_by(attending_competition_id: 1) is ok 
+ not the include?
+ 
+
 
 
 

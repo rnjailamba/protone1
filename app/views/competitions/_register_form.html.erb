@@ -1,4 +1,4 @@
-    <% if current_user.meetings.include?(params[:id]) %>
+    <% if current_user.meetings.find_by(attending_competition_id: params[:id]) %>
 	    <%= render 'unregister' %>
 	<% else %>
 	    <%= render 'register' %>
