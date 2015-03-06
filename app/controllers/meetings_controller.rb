@@ -6,7 +6,7 @@ class MeetingsController < ApplicationController
 		Rails.logger.info params[:attending_competition_id]
 
 		Rails.logger.info params[:id]
-		Rails.logger.info @comp
+		
 
 		@comp  = Competition.find(params[:attending_competition_id])
 		@meeting = current_user.meetings.build(:attending_competition_id => @comp.id)
@@ -27,16 +27,14 @@ class MeetingsController < ApplicationController
 	end
 
 	 def destroy
-	    #@comp  = Competition.find(params[:id])
+	    @comp  = current_user.meetings.find_by(params[:id]).attending_competition
+	    Rails.logger.info @comp
+
+
 	    current_user.meetings.find_by(params[:id]).destroy
 
-	    respond_to do |format|
-		  format.html
-		  format.js
-		end
+	    redirect_to @comp
 	  end
 	
 
 end
-
-

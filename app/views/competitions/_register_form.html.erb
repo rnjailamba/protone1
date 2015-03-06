@@ -1,8 +1,5 @@
 <div id="register_form">
-    <% if current_user.meetings.find_by(attending_competition_id: params[:id]) %>
-	    <%= render 'unregister' %>
-	<% else %>
+    
 	    <%= render 'register' %>
-	<% end %>
+
 </div>
-  
