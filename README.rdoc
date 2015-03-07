@@ -168,7 +168,9 @@ heroku addons:add bonsai
  u.meetings.find_by(attending_competition_id: 1) is ok 
  not the include?
  
-
+ #68
+The tweet button type functionality by the acts as follower gem
+also acts as likeable gem
 
 
 
