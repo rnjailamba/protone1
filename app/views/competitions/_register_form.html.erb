@@ -1,5 +1,10 @@
-<div id="register_form">
-    
-	    <%= render 'register' %>
 
-</div>
+
+
+<div id="register_form">
+  <% if current_user.attending_competitions.include?(@competition) %>
+    <%= render 'unregister' %>
+  <% else %>
+    <%= render 'register' %>
+  <% end %>
+ </div>

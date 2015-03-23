@@ -82,6 +82,10 @@ class CompetitionsController < ApplicationController
 
     def set_competition
       @competition = Competition.find(params[:id])
+      @id=@competition.id
+
+      Rails.logger.info "The ID"
+      Rails.logger.info @id
     end
 
     

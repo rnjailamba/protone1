@@ -173,6 +173,16 @@ The tweet button type functionality by the acts as follower gem
 also acts as likeable gem
 
 
+u=User.first
+c=Competition.find(37)
+u.attending_competitions.include?(c)
+^That worked
+
+u.meetings.find_by(attending_competition_id: 39) 
+is OK
+
+
+
 
 
 

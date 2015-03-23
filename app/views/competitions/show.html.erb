@@ -76,6 +76,7 @@
 				<button class="btn btn-warning" ><%= link_to 'Participants', participants_competition_path%></button>		  
 	<% end %>
 	<% if user_signed_in? %>
+		<div><%= hidden_field_tag :attending_competition_id, @competition.id %></div>
 		<%= render 'register_form' %>
 	<%end%>
 </div>

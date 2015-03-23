@@ -29,8 +29,12 @@ end
   def after_sign_in_path_for(resource)
   	Rails.logger.info "message"
    session[:previous_url] 
-   
-   
   end
+
+  private
+  def current_competition
+    @competition 
+  end
+  helper_method :current_competition
 end
 
