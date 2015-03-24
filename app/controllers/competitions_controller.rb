@@ -85,7 +85,7 @@ class CompetitionsController < ApplicationController
       @id=@competition.id
 
       Rails.logger.info "The ID"
-      Rails.logger.info @id
+      Rails.logger.info params[@id]
     end
 
     

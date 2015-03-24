@@ -8,8 +8,8 @@ class MeetingsController < ApplicationController
 		Rails.logger.info params[:id]
 		
 
-		@comp  = Competition.find(params[:attending_competition_id])
-		@meeting = current_user.meetings.build(:attending_competition_id => @comp.id)
+		@competition  = Competition.find(params[:attending_competition_id])
+		@meeting = current_user.meetings.build(:attending_competition_id => @competition.id)
 		#current_user.meetings.create(params[:id])
 
 		  if @meeting.save
@@ -21,7 +21,7 @@ class MeetingsController < ApplicationController
 		  end
 
 		  respond_to do |format|
-			  format.html 
+			  format.html { redirect_to @competition }
 			  format.js
 		  end
 	end
@@ -30,15 +30,16 @@ class MeetingsController < ApplicationController
 
 	 	 Rails.logger.info "The Params ID"
 	    Rails.logger.info params[:id]
-	    @comp  = Meeting.find(params[:id]).destroy
+	    @competition  =Meeting.find(params[:id]).attending_competition
+	     Meeting.find(params[:id]).destroy
 	    
 	    Rails.logger.info "The ID"
-	    Rails.logger.info @comp.id
+	    Rails.logger.info @competition.id
 
 
 	    
 	     respond_to do |format|
-			  format.html {redirect_to @comp}
+			  format.html { redirect_to @competition }
 			  format.js
 		  end
 	    
