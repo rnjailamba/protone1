@@ -182,6 +182,11 @@ u.meetings.find_by(attending_competition_id: 39)
 is OK
 
 
+Solving the register/unregister problem:
+File in question: _register.html.erb
+Variable in question:@competition
+First time this partial is called the var is picked from the Competition controller thereafter the stuff has to be done from the Meetings controller.
+
 
 
 
