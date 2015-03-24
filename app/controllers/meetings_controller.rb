@@ -30,13 +30,13 @@ class MeetingsController < ApplicationController
 
 	 	 Rails.logger.info "The Params ID"
 	    Rails.logger.info params[:id]
-	    @comp  = current_user.meetings.find_by(params[:id]).attending_competition
+	    @comp  = Meeting.find(params[:id]).destroy
 	    
 	    Rails.logger.info "The ID"
 	    Rails.logger.info @comp.id
 
 
-	    current_user.meetings.find_by(params[:id]).destroy
+	    
 	     respond_to do |format|
 			  format.html {redirect_to @comp}
 			  format.js

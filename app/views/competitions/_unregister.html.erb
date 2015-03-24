@@ -1,5 +1,5 @@
 <%= form_for(current_user.meetings.find_by(attending_competition_id: @id),
              html: { method: :delete },remote: true) do |f| %>
 
-  <%= f.submit "Unregister", class: "btn btn-primary" %>
+  <%= f.submit "Unregister", class: "btn" %>
 <% end %>
