@@ -22,7 +22,11 @@ class Competition < ActiveRecord::Base
 		conditions = {}
 		conditions[:category] = params[:category] if params[:category].present?
 
-		competitions = Competition.search(query, order: {name: :asc},where: conditions, facets: [:category],smart_facets: true, page: params[:page], per_page: 40)
+		competitions = Competition.search(query,where: conditions,
+		 facets: [:category],
+		 smart_facets: true, 
+		 page: params[:page], per_page: 40)
+
 		competitions
 	end
 

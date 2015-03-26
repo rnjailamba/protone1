@@ -32,7 +32,7 @@ class CompetitionsController < ApplicationController
     end
 
     @compFacet = Competition.facets_search(params)
-
+    #debugger
 
     respond_with(@competitions)
   end

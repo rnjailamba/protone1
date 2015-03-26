@@ -102,6 +102,9 @@ Search::
  https://github.com/ankane/searchkick/issues/12
  <input type="submit" value="Search" />
 
+ Facets Searchkick:
+ http://stackoverflow.com/questions/23354154/setting-up-facets-in-elasticsearch-with-searchkick-gem-in-rails-4-1
+
 
 Jquery turbolinks problem with search
 // BAD: this will not work.
@@ -187,6 +190,9 @@ File in question: _register.html.erb
 Variable in question:@competition
 First time this partial is called the var is picked from the Competition controller thereafter the stuff has to be done from the Meetings controller.
 
+
+http://railscasts.com/episodes/163-self-referential-association 
+for the saving
 
 
 
