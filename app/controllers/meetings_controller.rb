@@ -3,9 +3,9 @@ class MeetingsController < ApplicationController
 
 
 	def create
-		Rails.logger.info params[:attending_competition_id]
+		#Rails.logger.info params[:attending_competition_id]
 
-		Rails.logger.info params[:id]
+		#Rails.logger.info params[:id]
 		
 
 		@competition  = Competition.find(params[:attending_competition_id])
@@ -28,13 +28,13 @@ class MeetingsController < ApplicationController
 
 	 def destroy
 
-	 	 Rails.logger.info "The Params ID"
-	    Rails.logger.info params[:id]
+	 	#Rails.logger.info "The Params ID"
+	    #Rails.logger.info params[:id]
 	    @competition  =Meeting.find(params[:id]).attending_competition
 	     Meeting.find(params[:id]).destroy
 	    
-	    Rails.logger.info "The ID"
-	    Rails.logger.info @competition.id
+	    #Rails.logger.info "The ID"
+	    #Rails.logger.info @competition.id
 
 
 	    

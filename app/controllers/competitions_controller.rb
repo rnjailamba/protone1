@@ -84,8 +84,8 @@ class CompetitionsController < ApplicationController
       @competition = Competition.find(params[:id])
       @id=@competition.id
 
-      Rails.logger.info "The ID"
-      Rails.logger.info params[@id]
+      #Rails.logger.info "The ID"
+      #Rails.logger.info params[@id]
     end
 
     

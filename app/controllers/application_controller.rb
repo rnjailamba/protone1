@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  after_filter :store_location
+  before_filter :store_location
 
  
    acts_as_token_authentication_handler_for User, fallback_to_devise: false
@@ -19,6 +19,7 @@ def store_location
       request.path != "/users/sign_out" &&
       !request.xhr?) # don't store ajax calls
     session[:previous_url] = request.fullpath 
+    #debugger
     Rails.logger.info "message1"
     Rails.logger.info request.fullpath 
     
@@ -26,15 +27,17 @@ def store_location
 end
  
 
-  def after_sign_in_path_for(resource)
-  	Rails.logger.info "message"
-   session[:previous_url] 
-  end
+def after_sign_in_path_for(resource)
+	Rails.logger.info "message"
+ session[:previous_url] || root_path
+end
 
-  private
-  def current_competition
-    @competition 
-  end
-  helper_method :current_competition
+def after_sign_out_path_for(resource)
+  session[:previous_url] = competitions_path
+end
+
+def after_sign_up_path_for(resource)
+  session[:previous_url] || root_path
+end
 end
 
