@@ -95,3 +95,11 @@ body,html{
     font-size: 18px;
   }
 }
+
+.truncate {
+    display:inline-block;
+    width:280px;
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+}
