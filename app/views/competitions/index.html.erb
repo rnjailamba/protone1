@@ -17,14 +17,17 @@
          <div class=”input-group-btn”>
           <input type="submit" value="Search" class="btn btn-default pull-right hidden"/>
         </div>
-         <% if @compFacet.facets["category"].present? %>
+
+          <% if @compFacet.facets["category"].present? %>
               <% @compFacet.facets["category"]["terms"].each do |filter| %>
                 <% unless filter['term'].blank? || filter['term'] == '0' || filter['term'] == 0 %>
                   <li><%= link_to "#{filter["term"]} (#{filter["count"]})", "/competitions?query=#{filter["term"]}" %></li>
                 <% end %>
               <% end %>
           <% end %>
-      </ul>
+    </ul>
+
+
     </div>
     <div class="col span_2_of_3">
   
@@ -32,7 +35,8 @@
             <% @competitions.each do |competition| %>
               
                 <div class="thumbnail masonry-item ">
-                    <img src="http://placehold.it/320x130" alt="">
+                    <div class="topp">
+                    </div>
                     <div class="caption">
 
                         <!-- <h4 class="pull-right">$64.99</h4> -->
@@ -53,7 +57,7 @@
                         <p class="pull-right"><%= link_to 'More Info', competition %></p>
                             <!--<a href="#" class="btn-social btn-outline"><i class="fa fa-bookmark-o fa-2x footerIcon1"></i></a>-->
                          
-                            
+                        <div class="panel-footer">Panel footer</div>
                             <!-- <i class="fa fa-heart-o fa-2x footerIcon2"></i> -->
                         </p>
 
@@ -88,3 +92,5 @@
    <div class="center">
      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
   </div>
+
+

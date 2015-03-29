@@ -84,10 +84,16 @@ STATIC LAYOUT CSS
 .masonry-item {
   
   width: 320px;
-  height:390px;
+  height:300px;
   
   background-color: white;
   border: 2px solid #ccc;
+
+  .topp{
+    width: 316px;
+    height: 40px;
+    
+  }
 }
 
 .caption {

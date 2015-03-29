@@ -171,6 +171,22 @@ $(document).on('ready page:load', function () {
     });
 });
 
+$(document).on('ready page:load', function () {
+    $(".topp").each(function(){
+  
+    //var cnt = <%= competition.count %>;
+  console.log("good");
+ 
+  var colors = ['#CD8C95','#1abc9c','#2ecc71','#3498db','#9b59b6','#34495e','#bdc3c7','#e74c3c','#e67e22','#f1c40f'];
+  var random_color = colors[Math.floor(Math.random() * colors.length)];
+    //var cnt = <%= competition.count %>;
+  //random_color = "#"+((1<<24)*Math.random()|0).toString(16);
+  $(this).css( "background", randomColor({hue: 'blue'}));
+  });
+
+});
+
+
 
 
 
