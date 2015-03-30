@@ -69,42 +69,36 @@ STATIC LAYOUT CSS
 
 
     }
+.span_2_of_3{
 
+  #comp {
+    margin: 0 auto;
 
-
-
-
-
-
-
-#comp {
-  margin: 0 auto;
-
-}
-
-
-.masonry-item {
-  
-  width: 320px;
-  height:300px;
-  
-  background-color: white;
-  border: 2px solid #ccc;
-
-  .topp{
-    width: 316px;
-    height: 40px;
-    
   }
-}
 
-.caption {
+
+  .masonry-item {
     
-    overflow: hidden;
-    p{
-    	margin-bottom: 10px;
+    width: 320px;
+    height:300px;
+    
+    background-color: white;
+    border: 2px solid #ccc;
+
+    .topp{
+      width: 316px;
+      height: 40px;
+      
     }
-}
+  }
+
+  .caption {
+      
+      overflow: hidden;
+      p{
+      	margin-bottom: 10px;
+      }
+  }
 
 .caption h4 {
     white-space: nowrap;
@@ -143,7 +137,7 @@ STATIC LAYOUT CSS
     color: #333;
 }
 }
-
+}
 //Search near above facet
 
 
@@ -155,8 +149,8 @@ STATIC LAYOUT CSS
   flex-direction:row;
   
   
-  #address{
-    width: 220px;
+  .twitter-typeahead,#address{
+    width: 226px;
     //padding: 10px;
     //background-color: red;
     border-radius: 0px
@@ -164,13 +158,13 @@ STATIC LAYOUT CSS
 
   input[type=text],
   button {
+
+    //display:block;
     
-    display:block;
-    ;
   }
 
   input[type=text] {
-    width: 220px;
+    width: 226px;
     flex:1;
     padding:0.6em;
     border:0.2em solid rgb(26, 188, 156);
