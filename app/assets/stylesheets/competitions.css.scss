@@ -138,6 +138,55 @@ STATIC LAYOUT CSS
 }
 }
 }
+
+//Search near above facet
+
+
+.headerfield {
+  display:flex;
+  
+  margin:1em auto;
+  width:40%;
+  flex-direction:row;
+
+  position:relative;
+ 
+  .twitter-typeahead .tt-query,
+  .twitter-typeahead .tt-hint {
+    width: 266px;
+    height:37px;
+    
+  }
+  .twitter-typeahead,#competition_search{
+    width: 266px;
+    height:37px;
+    //padding: 10px;
+    //background-color: red;
+    border-radius: 0px
+  }
+
+  input[type=text],
+  button {
+
+    display:block;
+    
+  }
+
+  input[type=text] {
+    width: 266px;
+    flex:1;
+    padding:0.6em;
+    border:0.2em solid rgb(26, 188, 156);
+  }
+
+  button {
+    padding:0.6em 0.8em;
+    background-color:rgb(26, 188, 156);
+    color:white;
+    border:none;
+  }
+}
+
 //Search near above facet
 
 

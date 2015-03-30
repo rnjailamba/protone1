@@ -11,20 +11,13 @@
       <%= link_to "CMPETE!", competitions_path ,{class: "navbar-brand upMargin headerFont"}%>
     </div>
     
-
-   <%= form_tag competitions_path, class: " navbar-form navbar-left", :method => :get do %>
-      <div class="input-group input-group-lg">
-          <div class="form-group">
-            <%= text_field_tag :query, params[:query], id: "competition_search", :placeholder => "Search by name,college ...", class: "form-control", autocomplete: "off" %>
-          </div>
-          
-          <div class=”input-group-btn”>
-            <input type="submit" value="Search" class="btn btn-default pull-right hidden"/>
-          </div>
-      
-      </div>
-    <% end %>
-
+    <div class="headerfield navbar-form navbar-left input-group" id="searchform">
+      <%= form_tag competitions_path, :method => :get do %>
+        <%= text_field_tag :query, params[:query], id: "competition_search", :placeholder => "Search by competition name,college ...", class: "form-control", autocomplete: "off" %>
+        <button type="submit" id="search" class="hidden">Find!</button>
+      <% end %>
+    </div>
+    
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
