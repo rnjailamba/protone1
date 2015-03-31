@@ -48,29 +48,24 @@
                     <div class="caption">
 
                         <!-- <h4 class="pull-right">$64.99</h4> -->
-                        <h4><a href="#"><%= competition.name %></a>
+                        <h4><%= link_to "#{competition.name}".upcase, competition %>
                         </h4>
                         <%= competition.description %><br/>
                        
+                       <h5 ><span class="glyphicon glyphicon-tag"></span>  <strong><%= competition.category %></strong></h5>
                         
-                        <h5 class="pull-right"><span class="glyphicon glyphicon-calendar"></span>  <%= competition.startDateText %></h5>
-                        <h5 class="pull-left"><span class="glyphicon glyphicon-tag"></span>  <%= competition.category %></h5>                   
-                
+                        <h5 class="pull-left"><span class="glyphicon glyphicon-calendar"></span>  <%= competition.startDateText %></h5>
+                        
+                        <h5 style="color:black" class="truncate"><span class="glyphicon glyphicon-map-marker"></span> <%= competition.location %> </h5> 
                     </div>
 
 
-                    <div class="ratings">
-                        <h5 style="color:black" class="truncate"><span class="glyphicon glyphicon-map-marker"></span> <%= competition.location %> </h5>
+                    <div class="footer">
                         <hr style='background-color:#000000;border-width:0;color:#000000;height:1px;line-height:0;text-align:left;width:95%;'/>
-                        <p class="pull-right"><%= link_to 'More Info', competition %></p>
-                            <!--<a href="#" class="btn-social btn-outline"><i class="fa fa-bookmark-o fa-2x footerIcon1"></i></a>-->
-                         
-                        <div class="panel-footer">Panel footer</div>
-                            <!-- <i class="fa fa-heart-o fa-2x footerIcon2"></i> -->
-                        </p>
-
-                          
+                        <p class="pull-right moreInfo"><%= link_to 'More Info', competition %></p>      
                     </div>
+
+
                   </div>
                
             

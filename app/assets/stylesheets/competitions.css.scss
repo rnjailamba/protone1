@@ -7,6 +7,8 @@
 STATIC LAYOUT CSS
 **************************************/
 
+
+//The wrapper with the two halves
 .wrapper {
   /*  SECTIONS  */
     .section {
@@ -69,6 +71,8 @@ STATIC LAYOUT CSS
 
 
     }
+
+//The span with the pins
 .span_2_of_3{
 
   #comp {
@@ -121,11 +125,23 @@ STATIC LAYOUT CSS
     width: 100%;
 }
 
-.ratings {
+.footer {
     padding-right: 10px;
     padding-left: 10px;
     padding-bottom: 10px;
+    margin-bottom: 5px;
     color: #d17581;
+    position: absolute;
+    width: 316px;
+    height: 60px;
+    bottom: 0;
+    hr{
+      margin-bottom: 10px;
+    }
+    .moreInfo{
+      margin-right:10px;
+      padding-bottom: 10px;
+    }
 }
 
 .thumbnail {
@@ -139,7 +155,7 @@ STATIC LAYOUT CSS
 }
 }
 
-//Search near above facet
+//Search by college name and competition name in the header
 
 
 .headerfield {
