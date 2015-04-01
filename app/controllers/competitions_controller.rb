@@ -78,6 +78,8 @@ class CompetitionsController < ApplicationController
     meetings.create(attending_competition: other_comp.id)
   end
 
+  
+
   private
 
     def set_competition

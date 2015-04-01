@@ -15,7 +15,7 @@ resources :competitions do
     end
   end
 
-
+match "meetings/register" => "meetings#register", :via => :post
 
 
 

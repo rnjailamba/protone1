@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :store_location
 
  
-   acts_as_token_authentication_handler_for User, fallback_to_devise: false
+  acts_as_token_authentication_handler_for User, fallback_to_devise: false
   protect_from_forgery with: :null_session
 
  

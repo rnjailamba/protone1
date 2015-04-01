@@ -1,6 +1,3 @@
-
-
-
 <div id="register_form">
 	<% if user_signed_in? %>
 	  <% if current_user.attending_competitions.include?(@competition) %>
@@ -20,29 +17,17 @@
 			        
 				        <div id="inputs">
 
-				        	
-				        	
-									<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-								
-									<input type='text' name='username' id='username' value='' maxlength="50" size="30" placeholder="Username"/><br/>
-								
-								
-								
-									<input type='password' name='password' id='password' maxlength="50" size="30" placeholder="Password" /><br/>
-								
-								
-
-									<input type='submit' name='Submit' value='Register'  />
+							<%= form_tag("/meetings/register", :method=>"post") do %>
+								<div><%= hidden_field_tag :attending_competition_id, @competition.id %></div>
+								<%= text_field_tag :todo_text, params[:todo_text],class: "form-control" ,:placeholder =>"Email", autocomplete: "off"%>
+							  
 
 
-							
-
-					        
+							  <%= submit_tag("Register", :class=>"btn") %>
+							<% end %>
+		        
 	        			</div><!-- inputs end -->
     				</div><!--box ends -->
-
-
 
     		</div><!--wrapper ends -->
 		</div><!-- register event ends -->

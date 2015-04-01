@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303144048) do
+ActiveRecord::Schema.define(version: 20150401174710) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20150303144048) do
     t.integer  "attending_competition_id", limit: 4
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.string   "email"
   end
 
   add_index "meetings", ["attending_competition_id"], name: "index_meetings_on_attending_competition_id"
