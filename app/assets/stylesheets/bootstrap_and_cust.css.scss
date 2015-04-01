@@ -5,7 +5,8 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
 body {
-	background-color:lightgray;
+	
+  background-color: #ecf0f1;
 	font-family: 'Lato',"Times New Roman", Times, serif;
 	 -webkit-font-smoothing: antialiased;
   	text-rendering: optimizelegibility;
@@ -22,6 +23,11 @@ body,html{
 
 .center {
      text-align: center;
+}
+
+a:hover, a:visited, a:link, a:active
+  {
+    text-decoration: none;
 }
 
 
@@ -88,6 +94,10 @@ body,html{
 }
 
 .navbar{
+  background-color: #34495e;
+  border: 0;
+  border-radius: 0;
+
   .upMargin{
     margin-top: 6px;
   }

@@ -1,131 +1,147 @@
 
+<div class="showbody">
+	<div class="container">
 
-<div class="container">
+		<div class="row" id="moreInfo">
+			<div class="col-sm-6">
+				<div class="boxed center">
+					<strong><h1 class="thetitle centre"><%= "#{@competition.name}".upcase %></h1></strong>
+				</div>
+				<p style="border-style:solid; border-color:#FF0000;" class="redline"></p>
 
-	<div class="row" id="moreInfo">
-		<div class="col-sm-6">
-			<strong><h3><%= @competition.name %></h3></strong>
-			<div class="tabbable">
-				<ul class="nav nav-tabs">
-					<li class="active"><a href="#tab1" data-toggle="tab">Where</a></li>	
-					<li><a href="#tab2" data-toggle="tab">More Details</a></li>
+				<div class="tabbable">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#tab1" data-toggle="tab">Where</a></li>	
+						<li><a href="#tab2" data-toggle="tab">Schedule</a></li>
+								
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane" id="tab2">
+							<h4>Logo</small></h4>
 							
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane" id="tab2">
-						<h4>Logo</small></h4>
-						
-						<img src="http://placehold.it/140" class="thumbnail pull-left" alt="Placeholder image">
-						
-						
-						
-						<hr>
-						<p>The action starts at <%= @competition.startDateText %> </p>
-						
-						
-					</div><!-- end tab-pane -->
-					<div class="tab-pane active" id="tab1">
-						<h4><span class="glyphicon glyphicon-map-marker"></span> Our Location </h4>
-						
-						<iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/?q=<%= @competition.location %>&output=embed"></iframe>
-						
-						<p><h4><%= @competition.location %></h4></p>
-					</div><!-- end tab-pane -->
-					
-					
-				</div><!-- end tab-content -->
-			</div><!-- end tabbable -->
+							<img src="http://placehold.it/140" class="thumbnail pull-left" alt="Placeholder image">
+							
+							
+							
+						    <h4><p><%= @competition.description %></p></h4>	
+						  	
 
-		</div>
-		<div class="col-sm-6">
-			<strong><h3><%= @competition.category %></h3></strong>
-			
-			
-			<div class="list-group">
-				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading"><%= @competition.onOff %></h4>
+							<hr>
+							<p>Starts at : <%= @competition.startDateText %> </p>
+							<% unless   @competition.endDateText.empty? %>
+								<p>Ends at : <%= @competition.endDateText %> </p>
+							<% end %>
+							
+							
+						</div><!-- end tab-pane -->
+						<div class="tab-pane active" id="tab1">
+							<h4><span class="glyphicon glyphicon-map-marker"></span> Our Location </h4>
+							
+							<iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/?q=<%= @competition.location %>&output=embed"></iframe>
+							
+							<p><h4><%= @competition.location %></h4></p>
+						</div><!-- end tab-pane -->
+						
+						
+					</div><!-- end tab-content -->
+				</div><!-- end tabbable -->
+
+			</div>
+			<div class="col-sm-6">
+				<div class="details">
+
+					<header>
+						<h1>ESSENTIAL DETAILS</h1>
+						 
+					</header>
+
+					<ul>
+					  	
+						  <li class="question">
+						    <h3><span class=" glyphicon glyphicon-tag glyphicon1"></span> <p><%= @competition.category %></p></h3>						
+						  </li>
 					
-				</a>
-				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading"><%= @competition.description %></h4>
-				</a>
-				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading">Organized By:
-						  <%= @competition.organizedBy %></h4>
-				</a>
-				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading">FB link:
-						  <%= @competition.linkFb %></h4>
-				</a>
-				<a href="#" class="list-group-item">
-					<h4 class="list-group-item-heading">Website:
-						  <%= @competition.linkWebsite %></h4>
-				</a>
-			</div><!-- list-group -->
-			
-			
-		</div><!-- end col-sm-6 -->
+
+						  
+						  <% unless   @competition.onOff.empty? %>
+							  <li class="question">
+							    <h3><span class="glyphicon3 glyphicon glyphicon-map-marker"><p><%= @competition.onOff %></p></h3>							
+							  </li>
+						  <% end %>
+
+						  <% unless   @competition.money.nil? %>
+							  <li class="question">
+							    <h3><i class="fa fa-fw fa-money"></i><p><%= @competition.money %></p></h3>							
+							  </li>
+						  <% end %>
+
+						  <% unless   @competition.organizedBy.empty? %>
+							  <li class="question">
+							    <h3><i class="fa fa-server glyphicon4"></i><p><%= @competition.organizedBy %></p></h3>						
+							  </li>
+						  <% end %>
+						   <% unless   @competition.collegename.empty? %>
+							  <li class="question">
+							    <h3><i class="glyphicon glyphicon-home glyphicon4"></i><p><%= @competition.collegename %></p></h3>						
+							  </li>
+						  <% end %>
+						   
+
+						  <% unless   @competition.linkFb.empty? %>
+							  <li class="question">
+							    <h3><i class="fa fa-fw fa-facebook glyphicon5"></i><p><%= @competition.linkFb %></p></h3>							
+							  </li>
+						  <% end %>
+
+						  <% unless   @competition.linkWebsite.empty? %>
+							  <li class="question">
+							    <h3><span class=" glyphicon glyphicon6 glyphicon-link"><p><%= @competition.linkWebsite %></p></h3>							
+							  </li>
+						  <% end %>
+
+					</ul>
+					<!-- <button class="button-submit" onclick="calcResults('.form')">SAVE THIS EVENT</button> -->
+
+				</div><!-- details end -->
 				
-	</div>
+			</div><!-- end col-sm-6 -->
+					
+		</div>
 
 
-	  <body>
+		
+	  
+	    
+		
+		
+    	
+		
+	</div><!--container-->
 
-    <div class="container">
-
-      <!-- The justified navigation menu is meant for single line per list item.
-           Multiple lines will require custom code not provided by Bootstrap. -->
-      
-      </div>
-
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
-      </div>
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>Safari bug warning!</h2>
-          <p class="text-danger">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <!-- Site footer -->
-      <footer class="footer">
-        <p>&copy; Company 2014</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
-  </body>
-	<button class="btn btn-warning" ><%= link_to 'Back', competitions_path %></button>
-	<% if @competition.user == current_user %>
-				<button class="btn btn-warning" ><%= link_to 'Edit', edit_competition_path(@competition)%></button>	
-
-				<button class="btn btn-warning" ><%= link_to 'Participants', participants_competition_path%></button>		  
-	<% end %>
 	
-		<%= render 'register_form' %>
-	
-</div>
+		<div class="thebuttons registerthing">
+	        				
+						
+						<%= render 'register_form' %>
+            			
+	    </div>
+
+	<div class="thebuttons">
+	        <section class="content">
+					
+					<div class="box bg-1 ">
+						<% if @competition.user == current_user %>
+							<%= link_to 'Edit', edit_competition_path(@competition),{ :class=>"buttonn" } %>
+							<%= link_to 'Participants', participants_competition_path,{ :class=>"buttonn" }%>
+						<% end %>
+						<%= link_to 'BACK', competitions_path ,{ :class=>"buttonn" }%>
+            
+					</div>
+					
+				</section>
+	    </div>
+	    
+</div><!--showbody-->
 
 
 
