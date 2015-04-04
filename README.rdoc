@@ -162,6 +162,11 @@ git push heroku master
 rake assets:precompile RAILS_ENV=production
 heroku run rake db:migrate
 heroku run rake searchkick:reindex:all RAILS_ENV=production
+heroku restart [ I just had this issue after running a migration, but restarting solves the problem]
+
+
+To tail the logs live
+heroku logs -t 
 
 This worked:
 heroku addons:add bonsai
@@ -193,6 +198,12 @@ First time this partial is called the var is picked from the Competition control
 
 http://railscasts.com/episodes/163-self-referential-association 
 for the saving
+
+<%= debug params %> to inspect what's in params
+
+@vote = Vote.new params[:vote] creates new Vote to database
+Other way is by .create and put in the specific entries
+
 
 
 
