@@ -204,7 +204,7 @@ for the saving
 @vote = Vote.new params[:vote] creates new Vote to database
 Other way is by .create and put in the specific entries
 
-
+http://stackoverflow.com/questions/885414/a-concise-explanation-of-nil-v-empty-v-blank-in-ruby-on-rails
 
 
 
